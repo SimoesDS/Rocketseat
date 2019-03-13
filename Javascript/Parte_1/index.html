@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>
+            // 1º exercício
+            function mostraEndereco(){
+                var endereco = {
+                    rua: "Rua dos pinheiros",
+                    numero: 1293,
+                    bairro: "Centro",
+                    cidade: "São Paulo",
+                    uf: "SP"
+                }
+
+                return ("O usuário mora em", endereco.cidade, "/", endereco.uf + ",", "no bairro", 
+                endereco.bairro + ",", "na rua", "\"" + endereco.rua + "\"", "com nº", endereco.numero + ".")
+            }
+            mostraEndereco()
+
+            // 2º exercício
+            function pares(x, y) {
+                for (let numero = x; numero < y; numero++) 
+                    if ((numero % 2) == 0) 
+                        console.log(numero)                                    
+            }
+            pares(32, 321);
+
+            // 3º exercício
+            function temHabilidade(skills){
+                return (skills.indexOf("Javascript") != -1) ? true : false;
+            }
+
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            temHabilidade(skills)
+            console.log(temHabilidade(skills)) // NÃO ESTA VALENDO ESSA LINHA
+
+            // 4º exercício
+            function experiencia(anos) {
+               if (anos <= 1) {
+                   return "Iniciante"
+               }else if (anos <= 3) {
+                   return "Avançado"
+               }else if (anos <= 6) {
+                   return "Avançado"
+               }else {
+                   return "Jedi Master"
+               }
+            }
+
+            var anosEstudo = 7;
+            experiencia(anosEstudo); 
+
+           
+            // 5º exercício
+            function mostraHabilidade(usuarios){
+                for (const pessoa of usuarios) {
+                    console.log("O", pessoa.nome, "possui as habilidades:",
+                    pessoa.habilidades.join(', '))                    
+                }
+            }
+
+            var usuarios = [
+                {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                }
+            ];
+            mostraHabilidade(usuarios)
+
+        </script>
+    </body>
+</html>
